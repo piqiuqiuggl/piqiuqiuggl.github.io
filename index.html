@@ -3,18 +3,36 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- title是head部分中唯一必需的标签 -->
   <title>我的测试页面</title>
   <link href="styles/style.css" rel="stylesheet">
+  <!-- href 这个名字可能开始看起来有点令人费解，代表超文本引用（ hypertext reference）。 -->
   <link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+  <!-- 标题有h1-h6，由于h元素有确切的语义，所以请不要利用标题标签来改变同一行中的字体大小 -->
   <h1>主标题</h1>
   <h2>顶层标题</h2>
   <h3>子标题</h3>
   <h4>次子标题</h4>
-  <img src="images\icon.jpg" alt="测试图片">
+  <!-- 不是所有元素都拥有开始标签，内容，结束标签。一些元素只有一个标签，
+    通常用来在此元素所在位置插入/嵌入一些东西。
+    例如：元素<img>是用来在元素<img>所在位置插入一张指定的图片。例子如下： 
+    alt：当显示不出图片时，用这个文字替换-->
+  <img src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png" alt="测试图片"
+   width="180px" height="180px">
+  <!-- 段落（Paragraph） -->
   <p>这是一个段落</p>
+  <!--<em>和</em> 使得行内容变成斜体强调-->
+  <em>刀枪剑戟 斧钺钩叉</em>
+  <!-- 可以将“爆”嵌套在<strong> 中，意味着这个单词被着重强调 -->
+  <p>我的猫咪脾气<strong>爆</strong>:)</p>
+  <!-- <em> 是一个内联元素，所以就像你在下方可以看到的，第一行代码中的三个元素都没有间隙的展示在了同一行。
+    而<p>是一个块级元素，所以第二行代码中的每个元素分别都另起了新的一行展现，
+    并且每个段落间都有一些间隔（这是因为默认的浏览器有着默认的展示<p>元素的CSS styling）。 -->
+  <em>第一</em><em>第二</em><em>第三</em>
+  <p>第四</p><p>第五</p><p>第六</p>
   <p>这是另一个段落</p>
   <p>这里有：</p>
   <ul>
@@ -30,7 +48,12 @@
   </ol>
 
   <p>我们致力于</p>
-  <a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla宣言</a>
+  <!-- title: 标题title属性为超链接声明额外的信息当鼠标悬停在超链接上面时，这部分信息将以工具提示的形式显示。
+    target: 目标target属性用于指定链接如何呈现出来_blank将在新标签页中显示链接。
+    如果你希望在当前标签页显示链接，忽略这个属性即可。 -->
+  <a href="https://www.mozilla.org/zh-CN/about/manifesto/" title="mozilla官网" target="_blank">
+    Mozilla宣言</a>
+  <a href="http://www.example.com" title="你觉得'好玩吗'？">示例站点链接</a>
   <button>切换用户</button>
   <script src="scripts/main.js" defer></script>
 </body>

@@ -9,10 +9,10 @@ myHTML.onclick = function () {
 let myImage = document.querySelector('img');
 myImage.onclick = function () {
     let mySrc = myImage.getAttribute('src');
-    if (mySrc === "images/icon.jpg") {
-        myImage.setAttribute('src', 'images/icon2.jpg');
+    if (mySrc === "images/icon2.jpg") {
+        myImage.setAttribute('src',  "https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png");
     } else {
-        myImage.setAttribute('src', 'images/icon.jpg');
+        myImage.setAttribute('src', 'images/icon2.jpg');
     }
 }
 
