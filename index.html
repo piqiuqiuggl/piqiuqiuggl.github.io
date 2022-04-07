@@ -5,9 +5,54 @@
   <meta charset="utf-8">
   <!-- title是head部分中唯一必需的标签 -->
   <title>我的测试页面</title>
+  <!-- rel:关系 ， 指定当前文档与被链接资源之间的关系 -->
   <link href="styles/style.css" rel="stylesheet">
+  <!-- css可以链接一个文件也可以用<style type="text/css">标签指定 -->
+  <style type="text/css">
+    body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+
+}
+    h2 {
+      margin-left: 60%;
+      font-size:large;
+      color: black;
+    }
+
+    h3 {
+      color: blue
+    }
+
+    a {
+      color: black;
+      background: red;
+    }
+  </style>
+  <!-- 通过media属性给特定情况设置专属的style，这里是给打印模式一个专属的css -->
+  <style  type="text/css" media="print">
+    p {
+      color: blueviolet;
+    }
+  </style>
+  <!-- 电脑屏幕，并且显示区域宽度[512px,1024px]时，使用下面的style，注意type="text/css"这里不能省略 -->
+  <style type="text/css" media="screen and (min-width:512px) and (max-width:1024px)">
+    body {
+      background-color: rgb(226, 43, 83);
+    }
+  </style>
   <!-- href 这个名字可能开始看起来有点令人费解，代表超文本引用（ hypertext reference）。 -->
   <link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <!-- 实现页面自适应功能 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="keywords" content="第一个网站，学习web技术，测试">
+  <meta name="description" content="演示网站，仅供学习交流展示">
+  <meta name="author" content="qiuqiuggl">
+ <!--  5秒后刷新，并打开指定网站 -->
+<!--   <meta http-equiv="refresh" content="5;https://piqiuqiuggl.github.io/"> -->
 </head>
 
 <body>
