@@ -8,18 +8,21 @@
   <!-- rel:关系 ， 指定当前文档与被链接资源之间的关系 -->
   <link href="styles/style.css" rel="stylesheet">
   <!-- css可以链接一个文件也可以用<style type="text/css">标签指定 -->
-  <style type="text/css">
-    body {
-    width: 600px;
-    margin: 0 auto;
-    background-color: #FF9500;
-    padding: 0 20px 20px 20px;
-    border: 5px solid black;
 
-}
+  <style>
+    /* 这里注释要用css的而不是html的语法  */
+    body {
+      width: 600px;
+      margin: 0 auto;
+      background-color: #FF9500;
+      padding: 0 20px 20px 20px;
+      border: 5px solid black;
+
+    }
+
     h2 {
       margin-left: 60%;
-      font-size:large;
+      font-size: large;
       color: black;
     }
 
@@ -31,31 +34,50 @@
       color: black;
       background: red;
     }
+
+    span {
+      color: red;
+    }
   </style>
   <!-- 通过media属性给特定情况设置专属的style，这里是给打印模式一个专属的css -->
-  <style  type="text/css" media="print">
-    p {
-      color: blueviolet;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" media="print" href="styles/print.css">
+
   <!-- 电脑屏幕，并且显示区域宽度[512px,1024px]时，使用下面的style，注意type="text/css"这里不能省略 -->
-  <style type="text/css" media="screen and (min-width:512px) and (max-width:1024px)">
-    body {
-      background-color: rgb(226, 43, 83);
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" media="screen and (min-width:512px) and (max-width:1024px)"
+    href="styles/screen512to1024.css">
+
   <!-- href 这个名字可能开始看起来有点令人费解，代表超文本引用（ hypertext reference）。 -->
   <link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <!-- link除了链接css文件还可以链接网站的favicon(偏爱图标) -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
   <!-- 实现页面自适应功能 -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="keywords" content="第一个网站，学习web技术，测试">
   <meta name="description" content="演示网站，仅供学习交流展示">
   <meta name="author" content="qiuqiuggl">
- <!--  5秒后刷新，并打开指定网站 -->
-<!--   <meta http-equiv="refresh" content="5;https://piqiuqiuggl.github.io/"> -->
+  <!--  5秒后刷新，并打开指定网站 -->
+  <!--   <meta http-equiv="refresh" content="5;https://piqiuqiuggl.github.io/"> -->
+
+  <!-- base标签可以规定相对路径从哪开始 -->
+  <!-- <base href="http://demo.fishc.com/html5/lesson4/" target="_blank"> -->
+
+  <script type="text/javascript">
+    document.write("hello qqqi!");
+  </script>
+<!-- 使用css代替b和i元素 -->
+<style type="text/css">
+  .bold {font-weight: bolder; }
+  .italic {font-style: italic;}
+</style>
 </head>
 
 <body>
+  <p>上面的语句来自JavaScript</p>
+
+  <!-- 有了上面的base，相当于href="http://demo.fishc.com/html5/lesson4/test1"  ，影响了相对路径 -->
+  <!-- <a href="test1">测试base标签</a> -->
+
   <!-- 标题有h1-h6，由于h元素有确切的语义，所以请不要利用标题标签来改变同一行中的字体大小 -->
   <h1>主标题</h1>
   <h2>顶层标题</h2>
@@ -65,8 +87,9 @@
     通常用来在此元素所在位置插入/嵌入一些东西。
     例如：元素<img>是用来在元素<img>所在位置插入一张指定的图片。例子如下： 
     alt：当显示不出图片时，用这个文字替换-->
-  <img src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png" alt="测试图片"
-   width="180px" height="180px">
+  <img
+    src="https://roy-tian.github.io/learning-area/extras/getting-started-web/beginner-html-site/images/firefox-icon.png"
+    alt="测试图片" width="180px" height="180px">
   <!-- 段落（Paragraph） -->
   <p>这是一个段落</p>
   <!--<em>和</em> 使得行内容变成斜体强调-->
@@ -77,7 +100,9 @@
     而<p>是一个块级元素，所以第二行代码中的每个元素分别都另起了新的一行展现，
     并且每个段落间都有一些间隔（这是因为默认的浏览器有着默认的展示<p>元素的CSS styling）。 -->
   <em>第一</em><em>第二</em><em>第三</em>
-  <p>第四</p><p>第五</p><p>第六</p>
+  <p>第四</p>
+  <p>第五</p>
+  <p>第六</p>
   <p>这是另一个段落</p>
   <p>这里有：</p>
   <ul>
@@ -94,13 +119,119 @@
 
   <p>我们致力于</p>
   <!-- title: 标题title属性为超链接声明额外的信息当鼠标悬停在超链接上面时，这部分信息将以工具提示的形式显示。
-    target: 目标target属性用于指定链接如何呈现出来_blank将在新标签页中显示链接。
-    如果你希望在当前标签页显示链接，忽略这个属性即可。 -->
+          target: 目标target属性用于指定链接如何呈现出来_blank将在新标签页中显示链接。
+          如果你希望在当前标签页显示链接，忽略这个属性即可。 -->
   <a href="https://www.mozilla.org/zh-CN/about/manifesto/" title="mozilla官网" target="_blank">
     Mozilla宣言</a>
   <a href="http://www.example.com" title="你觉得'好玩吗'？">示例站点链接</a>
   <button>切换用户</button>
   <script src="scripts/main.js" defer></script>
+  <script src="scripts/patch.js" defer></script>
+  <!-- 块级元素：总是在新的行上开始，并尽可能地占据本行全部可用的宽度,比如<h1>-<h6>，<ol>,<ul>,<p>等-->
+  <!-- 行内元素：不会另起一行，只占用必要的宽度，比如<a>,<em>,<img>,<strong>,<script>,<span>等 -->
+  <!-- <br>插入一个换行符 -->
+  <p>黑夜给了我<br><span>黑色</span>的眼睛</p>
+  <p>我却用它寻 找
+
+    <!-- 为什么要将元素分为块级和行内？ -->
+    <!-- 这么多换行就换来一个空格，寻找和光明最终显示的也是中间只有一个空格 -->
+    <!-- 浏览器会将连续的空白字符合并为一个空格 -->
+
+    <span>光 明</span>
+  </p>
+  <!-- 一般情况下，行内元素只能包含数据和其他行内元素。而块级元素可以包含行内元素和其他块级元素 -->
+
+  <!-- <pre>用于定义预格式化文本：保留文本在源代码中的格式，使得页面中显示的和原代码中的效果完全一致 -->
+  <pre>
+    &#60;!DOCTYPE html&#62;
+    &#60;html&#62;
+    &#60;head&#62;
+      &#60;meta charset="utf-8"&#62;
+      &#60;title>我的测试页面&#60;/title&#62;
+        &#60;/head&#62;
+          &#60;body&#62;
+          &#60;!-- 演示pre元素的使用 --&#62;
+          &#60;/body&#62;
+          &#60;/html&#62;
+  </pre>
+  <!-- <、>等符号是html的保留字，要用字符实体替换  -->
+
+  <!-- 语义化：要求使用恰当语义的HTML元素，让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容 -->
+  <!-- 演示专门展示代码的code元素的使用 -->
+  <p>HTML中注释的语法是：<code>&#60;!-- 这里是注释内容 --&#62;</code></p>
+  <!-- 另外三个和展示代码相关的元素：
+  var：定义程序的变量
+  kbd：定义用户的输入
+  samp：定义程序的输出 -->
+  <p>
+    上面代码定义了一个变量<var>user_input</var>,用于接收用户的输入。
+  </p>
+  <p>如果用户输入的是<kbd>香蕉</kbd>，那么程序将打印<samp>你最喜欢吃的水果是：香蕉</samp></p>
+  <!-- 引用，短文字引用用q元素，给引用的部分自动加上引号，内容较长的引用用blockquote，默认只是给文字加上一个缩进 -->
+  <!-- 更好地显示效果都是由CSS实现的，html5思想：“语义与呈现分离” -->
+  <p>
+    神说：<q>好好学习！</q>
+  <blockquote cite="http://fishc.com.cn">
+    <!--这里是一大段引用哦-->
+    <!--这里是一大段引用哦-->
+    <!--这里是一大段引用哦-->
+    <p>电动</p>
+    <!-- cite元素用于定义作品、书籍的标题 -->
+    <p>我书架上有<cite>《Android自定义控件开发入门与实战》</cite></p>
+    <!-- abbr元素用于定义缩写 -->
+    <p>我是<abbr title="球球滚滚乐">qqggl</abbr></p>
+    <!-- dfn元素用来定义一个术语 -->
+    <p><dfn>HTML</dfn>是一门用于创建网页的标准标记语言</p>
+  </blockquote>
+  <!-- address元素用于定义作者的联系信息 -->
+  <address>
+    <strong>联系我们</strong><br>
+    邮箱：<a href="mailto:qqq@qq.com">qq_offical@qq.com</a><br>
+    微信：qqq_studio（公众号）<br>
+  </address>
+  <!-- ruby、rp、rt元素，用于注音，rp用于浏览器不支持这个特性时候用，rt把标音标起来 -->
+  <!-- bdo元素：用于调整文本的显示顺序 rtl或ltr 从左往右/从右往左-->
+  <bdo dir="rtl">
+    <ruby>魑<rp>(</rp>
+      <rt>chī</rt>
+      <rp>)</rp>
+    </ruby>
+    <ruby>魅<rp>(</rp>
+      <rt>mèi</rt>
+      <rp>)</rp>
+    </ruby>
+    <ruby>魍<rp>(</rp>
+      <rt>wánɡ</rt>
+      <rp>)</rp>
+    </ruby>
+    <ruby>魉<rp>(</rp>
+      <rt>liǎnɡ</rt>
+      <rp>)</rp>
+    </ruby>
+  </bdo>
+  </p>
+  <!-- 各种字符格式化 -->
+  <!-- b元素和strong元素：b只是变粗，strong还有表示“重要”的语义 -->
+  <p>b元素也能使得文本<b>变粗</b>，但他没有附带任何表示<strong>重要</strong>的语义</p>
+  <!-- em元素表示强调，默认是斜体,i元素也可以让文字变成斜体，但他没有任何表示强调的语义 -->
+  <p>学习最重要的是<em>实践</em>，i元素也可以<i>斜体</i>></p>
+  <!-- 由于b元素和i元素不具有强调的语义，建议使用css实现加粗和倾斜的效果 -->
+  <p class="bold">这里的文字要加粗</p>
+  <p class="italic">这里的内容要倾斜</p>
+  <!-- del和ins元素:用于文档的更新和修正，del表示删除，ins表示新加-->
+  <p>从今天起，鱼C论坛的域名从<del>bbs.fishc.cin</del>变成<ins>fish.com.cn</ins></p>
+  <!-- s元素和del元素都是横线划掉内容，但是s的语义是错误，del的语义是删除 -->
+  <p><s>1+1=3</s></p>
+  <!-- u元素：通常可以用于定义像拼写错误的单词或者汉语中的专有名词，下划线，单纯下划线效果应用css实现 -->
+  <p>我的名字不是<u>qiqiggl</u>,而是qiuqiuggl</p>
+  <!-- mark元素：标记文本的作用 -->
+  <p>家里还有<mark>土豆</mark>、<mark>柿子</mark>、<mark>胡萝卜</mark></p>
+  <!-- sup和sub元素表示商标和下标 -->
+  <p>E=MC<sup>2</sup></p>
+  <p>Mg+ZnSO<sub>4</sub>=MgSO<sub>4</sub>+Zn</p>
+  <!-- small元素：让指定文字变小 -->
+  <p><small>本网页最终解释权归qiu所有</small></p>
+
 </body>
 
 </html>
