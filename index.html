@@ -70,7 +70,7 @@
     .bold {
       font-weight: bolder;
     }
-
+  
     .italic {
       font-style: italic;
     }
@@ -121,7 +121,19 @@
     <li>思考者</li>
     <li>建造者</li>
   </ol>
-
+<!--  <dl> 元素 （或 HTML 描述列表元素）是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键 - 值对列表)。 
+  	  HTML <dt> 元素 （或 HTML 术语定义元素）用于在一个定义列表中声明一个术语。该元素仅能作为 dl 的子元素出现。通常在该元素后面会跟着 dd 元素， 
+      然而，多个连续出现的 <dt> 元素都将由出现在它们后面的第一个 dd 元素定义。<dd> 元素（HTML 描述元素）用来指明一个描述列表  (dl) 元素中一个
+      术语的描述。这个元素只能作为描述列表元素的子元素出现，并且必须跟在一个 dt 元素后。 -->
+  <dl>
+    <dt>培根</dt>
+      <dd>整个世界的粘合剂。</dd>
+    <dt>鸡蛋</dt>
+      <dd>一块蛋糕的粘合剂。</dd>
+    <dt>咖啡</dt>
+      <dd>一种浅棕色的饮料。</dd>
+      <dd>可以在清晨带来活力。</dd>
+  </dl>
   <p>我们致力于</p>
   <!-- title: 标题title属性为超链接声明额外的信息当鼠标悬停在超链接上面时，这部分信息将以工具提示的形式显示。
           target: 目标target属性用于指定链接如何呈现出来_blank将在新标签页中显示链接。
@@ -251,6 +263,60 @@
  <li><data value="399">巨无霸番茄酱</data></li>
  <li><data value="400">超级巨无霸番茄酱</data></li>
 </ul>
+<!-- time标签用来表示24小时制时间或者公历日期，若表示日期则也可以包含时间和时区，此元素意在以机器可读的格式表示日期和时间。 有安排日程表功能的应用可以利用这一点。 -->
+<!-- time元素可包含datatime属性，表示此元素的时间和日期 -->
+<p>音乐会开始的时间是<time>20:00</time>.</p>
+<p>音乐会的举办时间是<time datetime="2001-05-15 19:00">May 15</time>.</p>
+
+<!-- div元素也叫HTML文档分区元素，是一个通用型的流内容容器，默认无样式，配合CSS使用 -->
+<div class="warning">
+  <img src="https://interactive-examples.mdn.mozilla.net/media/examples/leopard.jpg"
+  alt="An intimidating leopard.">
+  <p>Beware of the leopard</p>
+</div>
+<!-- span元素是段与内容的通用行内容器，可以用它来编组元素以达到某种样式意图，span是行内元素，div是块元素 -->
+<p>加入<span class="ingredient">罗勒</span>, <span class="ingredient">松子</span>和<span class="ingredient">大蒜</span> 到搅拌机里搅拌成糊状</p>
+
+<p>在慢慢搅拌时逐渐加入<span class="ingredient">橄榄油</span></p>
+
+<!-- 多媒体标签 -->
+<!-- video元素用于在HTML中嵌入媒体播放器，用于支持文档内的视频播放，也可以将 <video>标签用于音频内容，但是 <audio> 元素可能在用户体验上更合适。 -->
+<!-- video标签中间的内容，是针对浏览器不支持此元素时候的降级处理，浏览器会使用它所支持的第一个源 -->
+<video width="500" controls >
+
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+          type="video/webm">
+
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          type="video/mp4">
+
+          
+  Sorry, your browser doesn't support embedded videos.
+</video>
+<!-- audio元素用于在文档中嵌入音频内容。 <audio> 元素可以包含一个或多个音频资源， 这些音频资源可以使用 src 属性或者<source> 元素来进行描述：浏览器将会选择最合适的一个来使用。也可以使用 MediaStream 将这个元素用于流式媒体。 -->
+<!-- <figure> 元素代表一段独立的内容，经常与说明（caption）figcaption 配合使用，并且作为一个独立的引用单元。当它属于主内容流（main flow）时，它的位置独立于主体。这个标签经常是在主文中引用的图片，插图，表格，代码段等等，当这部分转移到附录中或者其他页面时不会影响到主体。 -->
+  <figure>
+    <figcaption>Listen to the T-Rex:</figcaption>
+    <audio
+        controls
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">
+            Your browser does not support the <code>audio</code> element.
+    </audio>
+</figure>
+<!-- <track> 元素 被当作媒体元素—<audio> 和 <video>的子元素来使用。它允许指定时序文本字幕（或者基于时间的数据），例如自动处理字幕。
+     字幕格式有 WebVTT 格式（.vtt格式文件）— Web 视频文本字幕格式，以及指时序文本标记语言（TTML）格式。
+     track 给媒体元素添加的数据的类型在 kind 属性中设置，属性值可以是 subtitles, captions, descriptions, chapters 或 metadata。
+     该元素指向当用户请求额外的数据时浏览器公开的包含定时文本的源文件。
+     一个media 元素的任意两个 track 子元素不能有相同的 kind, srclang, 和 label属性。 -->
+<video controls
+       width="500"
+       src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4">
+    <track default
+           kind="captions"
+           srclang="en"
+           src="https://interactive-examples.mdn.mozilla.net/media/examples/friday.vtt" />
+    Sorry, your browser doesn't support embedded videos.
+</video>
 
 
 </body>

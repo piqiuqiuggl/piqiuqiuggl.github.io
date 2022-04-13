@@ -7,8 +7,6 @@ html {
     background-image: url("../images/bc.png");
 }
 
-
-
 h1 {
     font-size: 60px;
     text-align: center;
@@ -30,4 +28,33 @@ img {
     上下距离为0，左右居中*/
     display: block;
     margin: 0 auto;
-  }
+}
+/* 演示div标签 */
+.warning {
+    border: 10px ridge #f00;
+    background-color: #ff0;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.warning img {
+    width: 100%;
+}
+
+.warning p {
+    font: small-caps bold 1.2rem sans-serif;
+    text-align: center;
+}
+/* 演示span标签 */
+span.ingredient {
+    color: #f00;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+video::cue { 
+    font-size: 1rem;
+}
