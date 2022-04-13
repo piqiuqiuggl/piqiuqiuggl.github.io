@@ -65,11 +65,16 @@
   <script type="text/javascript">
     document.write("hello qqqi!");
   </script>
-<!-- 使用css代替b和i元素 -->
-<style type="text/css">
-  .bold {font-weight: bolder; }
-  .italic {font-style: italic;}
-</style>
+  <!-- 使用css代替b和i元素 -->
+  <style type="text/css">
+    .bold {
+      font-weight: bolder;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+  </style>
 </head>
 
 <body>
@@ -127,8 +132,10 @@
   <button>切换用户</button>
   <script src="scripts/main.js" defer></script>
   <script src="scripts/patch.js" defer></script>
-  <!-- 块级元素：总是在新的行上开始，并尽可能地占据本行全部可用的宽度,比如<h1>-<h6>，<ol>,<ul>,<p>等-->
-  <!-- 行内元素：不会另起一行，只占用必要的宽度，比如<a>,<em>,<img>,<strong>,<script>,<span>等 -->
+  <!-- 块级元素：总是在新的行上开始，并尽可能地占据本行全部可用的宽度,比如<h1>-<h6>，<ol>,<ul>,<p>等
+       块级元素占据其父元素（容器）的整个水平空间，垂直空间等于其内容高度，因此创建了一个“块”。-->
+  <!-- 行内元素：不会另起一行，只占用必要的宽度，比如<a>,<em>,<img>,<strong>,<script>,<span>等 
+       一个行内元素只占据它对应标签的边框所包含的空间。-->
   <!-- <br>插入一个换行符 -->
   <p>黑夜给了我<br><span>黑色</span>的眼睛</p>
   <p>我却用它寻 找
@@ -220,7 +227,7 @@
   <p class="italic">这里的内容要倾斜</p>
   <!-- del和ins元素:用于文档的更新和修正，del表示删除，ins表示新加-->
   <p>从今天起，鱼C论坛的域名从<del>bbs.fishc.cin</del>变成<ins>fish.com.cn</ins></p>
-  <!-- s元素和del元素都是横线划掉内容，但是s的语义是错误，del的语义是删除 -->
+  <!-- s元素和del元素都是横线划掉内容，但是s的语义是错误，不再相关不在准确，del的语义是删除，当表示文档编辑时，应该用del -->
   <p><s>1+1=3</s></p>
   <!-- u元素：通常可以用于定义像拼写错误的单词或者汉语中的专有名词，下划线，单纯下划线效果应用css实现 -->
   <p>我的名字不是<u>qiqiggl</u>,而是qiuqiuggl</p>
@@ -231,6 +238,20 @@
   <p>Mg+ZnSO<sub>4</sub>=MgSO<sub>4</sub>+Zn</p>
   <!-- small元素：让指定文字变小 -->
   <p><small>本网页最终解释权归qiu所有</small></p>
+  <!-- wbr元素标记的位置，浏览器可以选择用来换行，虽然他的换行规则可能不会在这里换行，在utf-8编码的页面中，wbr元素表现为零宽空格代码点 -->
+  <!-- 这里实现了在标点之前为URL换行，避免标点符号留在行尾 -->
+  <p>
+    http://this<wbr>.is<wbr>.a<wbr>.really<wbr>.long<wbr>.example<wbr>.com/With<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>
+  /level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages<wbr>/deeper<wbr>/level<wbr>/pages
+  </p>
+<!-- data元素将一个指定内容和机器可读的翻译联系在一起。但是，如果内容是与时间或者日期相关的，则一定要使用 <time> -->
+<p>新产品</p>
+<ul>
+ <li><data value="398">迷你番茄酱</data></li>
+ <li><data value="399">巨无霸番茄酱</data></li>
+ <li><data value="400">超级巨无霸番茄酱</data></li>
+</ul>
+
 
 </body>
 
